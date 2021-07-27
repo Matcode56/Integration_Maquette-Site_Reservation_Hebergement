@@ -1,0 +1,10 @@
+nav{
+    display:flex;
+    height:120px;
+    border: solid 1px black;
+}
+
+nav img{
+    height:50px;
+    
+}
