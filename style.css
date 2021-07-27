@@ -1,10 +1,88 @@
+@font-face {
+    font-family: Raleway;
+    src: url(Police/Raleway-Medium.ttf);
+}
+body{
+    font-family: Raleway;
+}
+
+header{
+    margin-left: 1%;
+}
 nav{
     display:flex;
-    height:120px;
+    height:80px;
     border: solid 1px black;
 }
 
-nav img{
+.bloc_logo{
+    height:100%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.bloc_logo img{
     height:50px;
     
 }
+.lien_nav{
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
+    width:100%;
+}
+
+.link_nav{
+    width: 140px;
+    text-align: center;
+    line-height: 83px;
+    text-decoration: none;
+}
+
+.--hébergement{
+    color:#0065FC;
+    border-top: 3px #0065FC solid;
+    text-align: center;
+   
+}
+
+.--inscrire{
+    color: #0065FC;
+    font-weight: bold;
+}
+
+.title_searchbar{
+    margin-top: 30px;
+    font-size: 1.2em;
+}
+
+.subtitle_searchbar{
+    font-weight: 100;
+    margin-top: 10px;
+    position:relative;
+    bottom: 5px;
+}
+
+.searchbar{
+    height: 50px;
+    display:flex;
+}
+.searchbar label{
+    width:55px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background: #F2F2F2;
+    border-top-left-radius: 40%;
+    border-bottom-left-radius: 40%;
+}
+
+.searchbar input{
+    width: 180px;
+    padding-left: 20px;
+    border-left:none;
+    border-right: none;
+    border-bottom: #F2F2F2 2px solid;
+    border-top: #F2F2F2 2px solid;
+}
+
