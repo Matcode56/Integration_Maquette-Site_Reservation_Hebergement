@@ -1,11 +1,16 @@
+/* -- GENERAL -- */
+
 @font-face {
     font-family: Raleway;
     src: url(Police/Raleway-Medium.ttf);
 }
+
+
 body{
     font-family: Raleway;
 }
 
+/*-- HEADER + NAV--*/
 header{
     margin-left: 1%;
 }
@@ -14,6 +19,8 @@ nav{
     height:80px;
     border: solid 1px black;
 }
+
+/* Partie: NAV / LOGO  */
 
 .bloc_logo{
     height:100%;
@@ -48,8 +55,11 @@ nav{
 
 .--inscrire{
     color: #0065FC;
+    font-family: Raleway;
     font-weight: bold;
 }
+
+/* Partie: Searchbar */
 
 .title_searchbar{
     margin-top: 30px;
@@ -64,7 +74,7 @@ nav{
 }
 
 .searchbar{
-    height: 50px;
+    height: 45px;
     display:flex;
 }
 .searchbar label{
@@ -73,8 +83,8 @@ nav{
     justify-content: center;
     align-items: center;
     background: #F2F2F2;
-    border-top-left-radius: 40%;
-    border-bottom-left-radius: 40%;
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
 }
 
 .searchbar input{
@@ -84,5 +94,76 @@ nav{
     border-right: none;
     border-bottom: #F2F2F2 2px solid;
     border-top: #F2F2F2 2px solid;
+    font-family: Raleway_bold;
 }
 
+.searchbar input::placeholder{
+    color: black;
+    font-size: 1.1em;
+    font-family: Raleway;
+}
+
+.searchbar button{
+    color: white;
+    background: #0065FC;
+    width: 110x;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    border: none;
+    font-size: 0.9em;
+}
+
+/* Partie: Filtre */
+
+.bloc_filtre{
+    display:flex;
+}
+
+.title_filtre{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 30px;
+    font-weight: bold;
+}
+.filtre{
+    height: 100px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+.filtre i{
+    background: #DEEBFF;
+    display: flex;
+    width:40px;
+    height: 50px;
+    border-radius: 100%;
+    justify-content: center;
+    align-items: center;
+    color:blue;
+    z-index: 1;
+}
+
+.info_number_location{
+    display:flex;
+}
+
+
+.filtre p{
+    border: solid 1px black;
+    height: 40px;
+    margin-left: -15px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    border: solid #F2F2F2 3px;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    border-left: none;
+    z-index: 0;
+}
+.--animaux_autorisés p{
+    width: 180px;
+}
