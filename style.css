@@ -11,7 +11,7 @@ body{
 }
 
 /*-- HEADER + NAV--*/
-header{
+header, section{
     margin-left: 1%;
 }
 nav{
@@ -145,9 +145,6 @@ nav{
     z-index: 1;
 }
 
-.info_number_location{
-    display:flex;
-}
 
 
 .filtre p{
@@ -166,4 +163,89 @@ nav{
 }
 .--animaux_autorisés p{
     width: 180px;
+}
+
+.info_number_location{
+    line-height: 50px;
+    display:flex;
+    align-items: center;
+}
+
+.info_number_location i{
+    color: blue;
+    border: solid 2px #DEEBFF;
+    border-radius: 1rem;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+}
+
+
+/* -- MAIN -- */
+
+
+.bloc_hébergement{
+    background:#F2F2F2;
+    height:600px;
+    width: 720px;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+.bloc_hébergement h2{
+    font-size: 1em;
+    margin-left:15px;
+    line-height: 30px;
+    position: relative;
+    top: 20px;
+}
+
+.proposition_hébergement{
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.proposition_hébergement figure{
+    border: solid 5px white;
+    border-radius: 1rem;
+    height:195px;
+    width: 210px;
+    background: white;
+    margin-right: 30px;
+    margin-left: 0px;
+}
+.proposition_hébergement figure img{
+    height: 110px;
+    width: 210px;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+.proposition_hébergement figcaption h3{
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+.proposition_hébergement figcaption p, .étoile{
+    margin-top: -10px;
+}
+.star_blue{
+    color:#0065FC;
+    font-size: 0.8em;
+}
+
+.star_grey{
+    color: #F2F2F2;
+    font-size: 0.8em;
+}
+
+#--Mouettes{
+    margin-right: 0px;
+}
+
+#--Amina{
+    margin-right: 0px;
 }
