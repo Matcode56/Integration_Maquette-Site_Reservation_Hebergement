@@ -15,6 +15,7 @@ header, section{
     margin-left: 1%;
 }
 
+
 /*-- HEADER (NAV + SEARCHBAR + FILTRES +INFOS)  --*/
 
 nav{
@@ -306,7 +307,7 @@ section{
 /* Partie: hébergement populaire */
 
 
-.hebergement_populaire{
+.bloc_hebergement_populaire{
     grid-area: hebergement_populaire;
     background: #F2F2F2;
     height: 605px;
@@ -332,8 +333,6 @@ section{
 .en-tete i{
     font-size: 1.3em;
 }
-
-
 
 
 .proposition_heber_populaire{
@@ -379,3 +378,112 @@ section{
 .étoile_populaire{
     margin-top:45px;
 }
+
+/* Partie: Activités */
+
+.activites{
+    display:grid;
+    grid-template-columns: 325px 325px 325px 325px;
+    grid-template-areas: "Vieux_Port Fort_Iles Parc_Calanques Notre_Dame_Parc";
+    height:455px;
+    column-gap: 35px;
+    background: none;
+}
+
+.activites figure{
+    margin:0;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    border-radius:1rem;
+    height:455px;
+
+}
+
+.activites figure figcaption{
+    height: 55px;
+    margin-top: -23px;
+    width:325px;
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    background: white;
+    
+}
+
+.activites figcaption h3{
+    font-size: 1em;
+    position: relative;
+    top:20px;
+    left:20px;
+
+}
+
+.activites img{
+    object-fit: cover;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    width:325px;
+}
+
+#Vieux_Port{
+        grid-area: Vieux_Port;
+}
+
+#Vieux_Port img{
+    height: 400px;
+}
+
+#Fort_Pomègues{
+    grid-area: Fort_Iles;
+    height:255px;
+}
+
+#Fort_Pomègues img{
+    height:200px;
+
+}
+
+#Iles_Frioul{
+    grid-area: Fort_Iles;
+    height:155px;
+    margin-top: 300px;
+}
+
+#Iles_Frioul img{
+    height:100px;
+}
+
+#Parc_Calanques{
+    grid-area: Parc_Calanques;
+}
+
+#Parc_Calanques img{
+    height:400px;
+
+}
+
+#Notre-Dame-de-la-Garde{
+    grid-area: Notre_Dame_Parc;
+    height:180px;
+}
+
+#Notre-Dame-de-la-Garde img{
+    height:125px;
+}
+
+#Parc_Longchamp{
+    grid-area: Notre_Dame_Parc;
+    height: 235px;
+    margin-top: 220px;
+}
+
+#Parc_Longchamp img{
+    height:180px;
+}
+
+
+
+
+
+
+
+
+
