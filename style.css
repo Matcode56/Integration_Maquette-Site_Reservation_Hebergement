@@ -1,3 +1,5 @@
+
+
 /* -- GENERAL -- */
 
 @font-face {
@@ -8,6 +10,8 @@
 
 body{
     font-family: Raleway;
+    width: 1200px;
+    margin: auto;
 }
 
 
@@ -15,6 +19,9 @@ header, section{
     margin-left: 1%;
 }
 
+a{
+    text-decoration: none;
+}
 
 /*-- HEADER (NAV + SEARCHBAR + FILTRES +INFOS)  --*/
 
@@ -391,10 +398,11 @@ section{
 }
 
 .activites figure{
+    height:455px;
     margin:0;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     border-radius:1rem;
-    height:455px;
+    
 
 }
 
@@ -480,7 +488,25 @@ section{
 }
 
 
+/* -- FOOTER --*/
+footer{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "About Hébergement Assistance";
+    
+}
 
+#bloc_about{
+    grid-area: About;
+}
+
+#bloc_about_hébergement{
+    grid-area: Hébergement;
+}
+
+#bloc_assistance{
+    grid-area: Assistance;
+}
 
 
 
