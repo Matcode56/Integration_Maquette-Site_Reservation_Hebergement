@@ -10,19 +10,19 @@
 
 body{
     font-family: Raleway;
-    width: 1200px;
-    margin: auto;
+    max-width: 1920px;
+    margin-left: min(3%);
+    margin-right: min(3%);
 }
 
-
-header, section{
-    margin-left: 1%;
-}
 
 a{
     text-decoration: none;
 }
 
+img{
+    object-fit: cover;
+}
 /*-- HEADER (NAV + SEARCHBAR + FILTRES +INFOS)  --*/
 
 nav{
@@ -46,7 +46,7 @@ nav{
     display:flex;
     justify-content: flex-end;
     align-items: center;
-    width:100%;
+    width: 100%;
 }
 
 .link_nav{
@@ -60,7 +60,6 @@ nav{
     color:#0065FC;
     border-top: 3px #0065FC solid;
     text-align: center;
-   
 }
 
 .--inscrire{
@@ -84,6 +83,7 @@ nav{
     height: 40px;
     display:flex;
 }
+
 .searchbar label{
     width:55px;
     display:flex;
@@ -129,17 +129,20 @@ nav{
 }
 
 .title_filtre{
-    display:flex;
-    justify-content: center;
-    align-items: center;
+    
     margin-right: 30px;
     font-weight: bold;
 }
+.filtres{
+    display:grid;
+    grid-template-columns: auto auto auto auto ;
+    grid-template-areas: "économique familial romantique animaux";
+    column-gap: 10px;
+}
+
 .filtre{
     display:flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 20px;
+    margin: 0;
 }
 .filtre i{
     background: #DEEBFF;
@@ -156,22 +159,42 @@ nav{
 
 
 .filtre p{
-    border: solid 1px black;
-    height: 40px;
-    margin-left: -15px;
+    height: 45px;
     display:flex;
     justify-content: center;
     align-items: center;
-    width: 150px;
+    padding-left: 30px;
+    padding-right:20px;
+    position: relative;
+    margin:0;
+    right:22px;
     border: solid #F2F2F2 3px;
     border-top-right-radius: 2rem;
     border-bottom-right-radius: 2rem;
     border-left: none;
     z-index: 0;
 }
-.--animaux_autorisés p{
-    width: 180px;
+
+
+.economique{
+    grid-area: économique;
 }
+
+.--familial{
+    grid-area:familial;
+}
+
+.--romantique{
+    grid-area: romantique;
+}
+
+.--animaux_autorisés{
+    grid-area: animaux;
+}
+
+
+
+/* Partie: Info */
 
 .bloc_info{
     display:flex;
@@ -198,19 +221,17 @@ nav{
 
 section{
     display:grid;
-    grid-template-columns: 780px 400px;
-    grid-template-rows: 605px 1fr;
+    grid-template-columns: 68% 28%;
+    grid-template-rows: 650px 1fr;
     grid-template-areas: "hebergement hebergement_populaire"
                                 "Activité Activité";
-    column-gap: 30px;
+    column-gap: 4%;
     margin-top: 15px;
 }
 
 .bloc_hébergement{
     grid-area: hebergement;
     background:#F2F2F2;
-    height: 605px;
-    width: 780px;
     border-radius: 1rem;
 
 }
@@ -218,50 +239,52 @@ section{
 .bloc_hébergement h2{
     font-size: 1.2em;
     margin-left:40px;
-    line-height: 30px;
     position: relative;
-    top: 20px;
+    
    
 }
 
 .proposition_hébergement{
     display:grid ;
-    width: 780px;
-    height:480px;
-    grid-template-columns: 220px 220px 220px;
+    height:500px;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     grid-template-areas: "hebergement1 hebergement2 hebergement3"
                         "hebergement4 hebergement5  hebergement6";
-    column-gap: 25px;
-    align-items: center;
+    column-gap: 3%;
+    row-gap: 5%;
+    margin-left: 3%;
+    margin-right:3%;
+    margin-top: 30px;
     justify-content: center;
 }
 
 .proposition_hébergement figure{
     border: solid 5px white;
     border-radius: 1rem;
-    height:195px;
-    width:210px;
+    height:215px;
     background: white;
     margin:0;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .proposition_hébergement figure img{
-    height: 110px;
-    width: 210px;
+    height: 60%;
+    width: 100%;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
     object-fit: cover;
 }
 
 .proposition_hébergement figcaption h3{
-    font-size: 0.9em;
-    margin-top: 5px;
+    font-size: 1em;
+    margin-top: 8px;
+    margin-left: 3%;
 }
 
 .proposition_hébergement figcaption p, .étoile{
     margin-top: -10px;
+    margin-left: 3%;
 }
 
 .proposition_hébergement figcaption span{
@@ -305,10 +328,10 @@ section{
 .afficher_plus{
     background: none;
     border:none;
-    margin-top: 10px;
-    font-size: 1em;
+    margin-top: 30px;
+    font-size: 1.1em;
     font-weight: bold;
-    margin-left: 40px;
+    margin-left: 3%;
 }
 
 /* Partie: hébergement populaire */
@@ -316,9 +339,7 @@ section{
 
 .bloc_hebergement_populaire{
     grid-area: hebergement_populaire;
-    background: #F2F2F2;
-    height: 605px;
-    width:400px;
+    background:#F2F2F2;
     border-radius: 1rem;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
@@ -345,7 +366,8 @@ section{
 .proposition_heber_populaire{
     display:flex;
     flex-direction: column;
-    margin-top: -10px;
+    justify-content: center;
+    align-items: center;
     
 
 }
@@ -354,23 +376,26 @@ section{
     border: solid 5px white;
     border-radius: 1rem;
     height: 130px;
-    width: 340px;
+    width: 85%;
     background: white;
     display:flex;
-    margin-left: 25px;
-    margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+    
+    
 }
 
 .proposition_heber_populaire img{
     height: 130px;
-    width: 125px;
+    width: 40%;
     border-bottom-left-radius: 1rem;
     border-top-left-radius: 1rem;
     object-fit: cover;
 }
 
 .proposition_heber_populaire figcaption{
-    margin-left: 20px;
+    margin-left: 5%;
+    width: 60%;
 }
 
 .proposition_heber_populaire h3{
@@ -388,104 +413,76 @@ section{
 
 /* Partie: Activités */
 
+.bloc_activités{
+    grid-area: Activité;
+}
 .activites{
     display:grid;
-    grid-template-columns: 325px 325px 325px 325px;
-    grid-template-areas: "Vieux_Port Fort_Iles Parc_Calanques Notre_Dame_Parc";
-    height:455px;
-    column-gap: 35px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(11, 1fr);
+    column-gap: 2%;
     background: none;
+    height:470px;
 }
 
 .activites figure{
-    height:455px;
     margin:0;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     border-radius:1rem;
-    
-
+    overflow: hidden;
 }
 
-.activites figure figcaption{
-    height: 55px;
-    margin-top: -23px;
-    width:325px;
-    border-bottom-right-radius: 1rem;
-    border-bottom-left-radius: 1rem;
+
+.activites  h3{
+    font-size: 1em;
+    margin-left: 5%;
     background: white;
     
 }
 
-.activites figcaption h3{
-    font-size: 1em;
-    position: relative;
-    top:20px;
-    left:20px;
-
-}
-
 .activites img{
-    object-fit: cover;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
-    width:325px;
+    width:100%;
+    height: calc(100% - 55px);
 }
 
 #Vieux_Port{
-        grid-area: Vieux_Port;
+        grid-column: 1/2;
+        grid-row: 1/12;
 }
 
-#Vieux_Port img{
-    height: 400px;
-}
 
 #Fort_Pomègues{
-    grid-area: Fort_Iles;
-    height:255px;
-}
-
-#Fort_Pomègues img{
-    height:200px;
-
+    grid-column: 2/3;
+    grid-row:1/7;
 }
 
 #Iles_Frioul{
-    grid-area: Fort_Iles;
-    height:155px;
-    margin-top: 300px;
-}
-
-#Iles_Frioul img{
-    height:100px;
+    grid-column:2/3;
+    grid-row: 8/12;
 }
 
 #Parc_Calanques{
-    grid-area: Parc_Calanques;
+    grid-column: 3/4;
+    grid-row: 1/12;
 }
 
-#Parc_Calanques img{
-    height:400px;
-
-}
 
 #Notre-Dame-de-la-Garde{
-    grid-area: Notre_Dame_Parc;
-    height:180px;
+    grid-column: 4/5;
+    grid-row: 1/6;
 }
 
-#Notre-Dame-de-la-Garde img{
-    height:125px;
-}
 
 #Parc_Longchamp{
-    grid-area: Notre_Dame_Parc;
-    height: 235px;
-    margin-top: 220px;
+    grid-row: 7/12;
+    grid-column: 4/5;
+
 }
 
-#Parc_Longchamp img{
-    height:180px;
-}
+
+
 
 
 /* -- FOOTER --*/
