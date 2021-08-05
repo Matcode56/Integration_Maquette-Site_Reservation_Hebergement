@@ -8,12 +8,14 @@
 
 body{
     font-family: Raleway;
+    margin:0;
+    width: 100%;
     
 }
 header, section{
     max-width: 1750px;
     margin-left: 3%;
-    margin-right:3%;
+    margin-right: 3%;
 }
 
 a{
@@ -25,48 +27,88 @@ img{
 }
 /*-- HEADER (NAV + SEARCHBAR + FILTRES +INFOS)  --*/
 
-nav{
-    display:flex;
-    height:80px;
-}
+
 
 /* Partie: NAV */
 
+nav{
+    display:grid;
+    grid-template-columns: auto 1fr auto auto auto;
+    grid-template-areas: "logo espacement hosting activités button_inscrire";
+    height:80px;
+}
+
 .bloc_logo{
-    height:100%;
     display: flex;
     align-items: flex-end;
+    grid-area: logo;
 }
-
-.bloc_logo img{
+nav img{
     height:50px;
-}
-
-.lien_nav{
-    display:flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 100%;
+    
 }
 
 .link_nav{
-    width: 140px;
-    text-align: center;
-    line-height: 80px;
-    text-decoration: none;
+    padding-right: 30px;
+    padding-left: 30px;
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+.--activités{
+    grid-area: activités;
+}
 .--hébergement{
+    grid-area:hosting;
     color:#0065FC;
     border-top: 3px #0065FC solid;
     text-align: center;
 }
 
-.--inscrire{
+.--button{
+    grid-area: button_inscrire;
     color: #0065FC;
     font-weight: bold;
 }
 
+@media (max-width:650px) {
+    nav{
+        grid-template-columns: 50% 50%;
+        grid-auto-rows: 80px auto;
+        grid-template-areas: "logo  button_inscrire"
+                             "hosting activités";
+        height:160px;
+        row-gap:20px;
+    }
+
+    .bloc_logo{
+        margin-left: 10%
+    }
+    .link_nav{
+        width:100%;
+        padding:0;
+        text-align: center;
+    }
+    .--button{
+        justify-content: flex-end;
+        width:90%;
+    }
+
+    .--hébergement{
+        border-top: none;
+        border-bottom: 3px #0065FC solid;
+    }
+
+    .--activités{
+        border-bottom: 3px solid #F2F2F2;
+    }
+    header{
+        margin:0
+    }
+    
+}
 /* Partie: Searchbar */
 
 .title_searchbar{
@@ -95,7 +137,7 @@ nav{
 }
 
 .searchbar input{
-    width: 180px;
+    width: 260px;
     padding-left: 20px;
     border-left:none;
     border-right: none;
@@ -111,16 +153,52 @@ nav{
 }
 
 .searchbar button{
-    color: white;
-    font-weight: bold;
+    color:white;
     background: #0065FC;
     width: 120px;
     border-top-right-radius: 1rem;
     border-bottom-right-radius: 1rem;
     border: none;
-    font-size: 0.9em;
+    font-size: 1em;
+    
 }
 
+.searchbar button i{
+    display:none
+}
+
+.search_text_btn{
+    font-weight: bold;
+}
+
+@media (max-width:650px) {
+    .en-tete_searchbar{
+       margin-left: 3%;
+       margin-right: 3%;
+    }
+
+    .searchbar{
+        display:flex;
+        justify-content:center;
+        width:100%;
+    }
+
+    .searchbar input{
+        width:60%;
+    }
+    .searchbar button{
+        width:55px;
+        border-radius: 1rem;
+        margin-left: -20px;
+    }
+    .search_text_btn{
+        display:none;
+    }
+
+    .searchbar button i{
+        display:block;
+    }
+}
 /* Partie: Filtre */
 
 .bloc_filtre{
@@ -129,7 +207,6 @@ nav{
 }
 
 .title_filtre{
-    
     margin-right: 30px;
     font-weight: bold;
 }
@@ -156,7 +233,6 @@ nav{
 }
 
 
-
 .filtre p{
     height: 45px;
     display:flex;
@@ -174,7 +250,12 @@ nav{
     z-index: 0;
 }
 
-
+@media (max-width:650px){
+    .bloc_filtre{
+        display:block;
+        margin-left:3%;
+    }
+}
 
 
 /* Partie: Info */
@@ -199,7 +280,11 @@ nav{
     margin-right: 15px;
 }
 
-
+@media (max-width:650px) {
+    .bloc_info{
+        margin-left: 3%;
+    }
+}
 /* -- MAIN -- */
 
 section{
@@ -221,7 +306,7 @@ section{
                             "Activité";
         column-gap: 0%;
         row-gap: 30px;
-        width:100%;
+        justify-content: center;
     }
 
         .bloc_hébergeent{
@@ -232,65 +317,76 @@ section{
 
 .bloc_hébergement{
     grid-area: hebergement;
-    background:#F2F2F2;
+    background: #F2F2F2;
+    height: auto;
     border-radius: 1rem;
-    height:650px;
-    width: 100%;
 
 }
 
-.bloc_hébergement h2{
-    margin:0;
+    .grid_hebergement{
+    
+    border-radius: 1rem;
+    display:grid ;
+    grid-template-columns:  1fr 1fr 1fr;
+    grid-template-rows: 5% 39% 39% 5%;
+    grid-template-areas: "title title title"
+                        "hebergement1 hebergement2 hebergement3"
+                        "hebergement4 hebergement5  hebergement6"
+                        "button button button";
+    height:600px;
+    column-gap: 3%;
+    row-gap: 4%;
+    margin-left: 3%;
+    margin-right:3%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    
+    }
+
+
+
+
+.grid_hebergement h2{
+    grid-area:title;
     font-size: 1.2em;
-    margin-left:3%;
-    height: 60px;
     display: flex;
     align-items: center;
    
 }
 
-.proposition_hébergement{
-    display:grid ;
-    height:500px;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas: "hebergement1 hebergement2 hebergement3"
-                        "hebergement4 hebergement5  hebergement6";
-    column-gap: 3%;
-    row-gap: 5%;
-    margin-left: 3%;
-    margin-right:3%;
-    justify-content: center;
-}
+    
 
-.proposition_hébergement figure{
+.grid_hebergement figure{
     border: solid 5px white;
     border-radius: 1rem;
     background: white;
     margin:0;
-    height: 225px;
+    height:auto;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-.proposition_hébergement figure img{
+.grid_hebergement figure img{
     height: 60%;
     width: 100%;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
 }
 
-.proposition_hébergement figcaption h3{
+.grid_hebergement figcaption h3{
     font-size: 1em;
-    margin-top: 8px;
+    margin-top: 3%;
     margin-left: 3%;
 }
 
-.proposition_hébergement figcaption p, .étoile{
-    margin-top: -10px;
+.grid_hebergement figcaption p{
+    margin-bottom: 12px;
+}
+.grid_hebergement figcaption p, .étoile{
+    margin-top: -3.5%;
     margin-left: 3%;
 }
 
-.proposition_hébergement figcaption span{
+.grid_hébergement figcaption span{
     font-weight: bold;
 }
 
@@ -329,30 +425,51 @@ section{
 
 
 .afficher_plus{
+    grid-area: button;
     background: none;
     border:none;
-    margin-top: 30px;
     font-size: 1.1em;
     font-weight: bold;
-    margin-left: 3%;
+    display:flex;
+    align-items: center;
 }
 
 @media (max-width:1000px) {
 
-    .bloc_hébergement{
-        height:900px;
-    }
-    .proposition_hébergement{
-        grid-template-rows: 1fr 1fr 1fr;
+    .grid_hebergement{
+
+        height:800px;
+        grid-template-rows: 5% 26% 26% 26% 5%;
         grid-template-columns: 1fr 1fr;
-        grid-template-areas: "hebergement1 hebergement2"
+        grid-template-areas: "title title"
+                            "hebergement1 hebergement2"
                              "hebergement3 hebergement4"
-                             "hebergement5 hebergement6";
-        row-gap:4.5%;
+                             "hebergement5 hebergement6"
+                             "button button";
+       row-gap:3%;
     }
     
 }
 
+@media (max-width:600px) {
+    .grid_hebergement{
+
+        height:1450px;
+        grid-template-rows: 2.5% repeat(6,13.5%)2.5%;
+        grid-template-columns: 100%;
+        grid-template-areas: 
+                             "title"
+                             "hebergement1" 
+                             "hebergement2"
+                             "hebergement3" 
+                             "hebergement4"
+                             "hebergement5" 
+                             "hebergement6"
+                             "button";
+       row-gap:2%;
+    }
+    
+}
 /* Partie: hébergement populaire */
 
 
@@ -497,7 +614,7 @@ section{
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
     width:100%;
-    height: calc(100% - 55px);
+    height: calc(100% - 50px);
 }
 
 #Vieux_Port{
@@ -544,8 +661,6 @@ section{
     }
 
     #Vieux_Port{
-        grid-column:unset;
-        grid-row: unset;
         grid-area: Port;
     }
 
@@ -570,15 +685,47 @@ section{
     }
 }
 
+@media (max-width:800px) {
+    .activites{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: "Port Fort" 
+                             "Iles Calanque"
+                             "Notre_Dame Longchamp";
+        row-gap: 2%;
+        height: 600px;
+        }
+    
+}
+
+@media (max-width:550px) {
+    .activites{
+        grid-template-columns: 100%;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: "Port"
+                             "Fort" 
+                             "Iles" 
+                             "Calanque"
+                             "Notre_Dame" 
+                             "Longchamp";
+        row-gap: 2%;
+        height: 1400px;
+        }
+    
+}
 /* -- FOOTER --*/
 footer{
+    background: #F2F2F2;
+}
+
+.element_footer{
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: "About Hébergement Assistance";
-    background: #F2F2F2;
-    padding-right: 3%;
-    padding-left: 3%;
     margin-top: 50px;
+    column-gap: 2%;
+    margin-left: 3%;
+    
     
 }
 
@@ -592,4 +739,15 @@ footer{
 
 #bloc_assistance{
     grid-area: Assistance;
+}
+
+@media (max-width:800px) {
+    .element_footer{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: "About"
+                            "Hébergement"
+                            "Assistance";
+    }
+    
 }
