@@ -18,6 +18,11 @@ header, section{
     margin-right: 3%;
 }
 
+@media (min-width: 1750px){
+    header, section{
+        margin:auto;
+    }
+}
 a{
     text-decoration: none;
     color: black;
@@ -65,17 +70,18 @@ nav img{
     justify-content: center;
 }
 
-.--activités{
+.activity_nav{
     grid-area: activity;
 }
-.--hébergement{
+
+.hosting_nav{
     grid-area:hosting;
     color:#0065FC;
     border-top: 3px #0065FC solid;
     text-align: center;
 }
 
-.--button{
+.btn_nav{
     grid-area: button_suscribe;
     color: #0065FC;
     font-weight: bold;
@@ -99,21 +105,21 @@ nav img{
         padding:0;
         text-align: center;
     }
-    .--button{
+    .btn_nav{
         justify-content: flex-end;
         width:90%;
     }
 
-    .--hébergement{
+    .hosting_nav{
         border-top: none;
         border-bottom: 3px #0065FC solid;
     }
 
-    .--activités{
+    .activity_nav{
         border-bottom: 3px solid #F2F2F2;
     }
     header{
-        margin:0
+        margin:0;
     }
     
 }
@@ -314,7 +320,7 @@ section{
     grid-template-columns: 68% 28%;
     grid-template-rows: auto auto;
     grid-template-areas: "hebergement hebergement_populaire"
-                                "Activité Activité";
+                                "Activity Activity";
     column-gap: 4%;
     margin-top: 15px;
 }
@@ -325,19 +331,17 @@ section{
         grid-template-rows: repeat(3, auto);
         grid-template-areas: "hebergement_populaire"
                             "hebergement"
-                            "Activité";
+                            "Activity";
         column-gap: 0%;
         row-gap: 30px;
         justify-content: center;
     }
 
-        .bloc_hébergeent{
-            width:100%;
-        }
 }
 
+/* Partie: hébergement principale */
 
-#bloc_hébergement{
+#bloc_hosting{
     grid-area: hebergement;
     background: #F2F2F2;
     height: auto;
@@ -345,8 +349,7 @@ section{
 
 }
 
-    .grid_hebergement{
-    
+    .grid_hosting{
     border-radius: 1rem;
     display:grid ;
     grid-template-columns:  1fr 1fr 1fr;
@@ -362,13 +365,12 @@ section{
     margin-right:3%;
     padding-top: 20px;
     padding-bottom: 20px;
-    
     }
 
 
 
 
-.grid_hebergement h2{
+.grid_hosting h2{
     grid-area:title;
     font-size: 1.2em;
     display: flex;
@@ -378,7 +380,7 @@ section{
 
     
 
-.grid_hebergement figure{
+.grid_hosting figure{
     border: solid 5px white;
     border-radius: 1rem;
     background: white;
@@ -387,32 +389,32 @@ section{
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-.grid_hebergement figure img{
+.grid_hosting figure img{
     height: 60%;
     width: 100%;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
 }
 
-.grid_hebergement figcaption h3{
+.grid_hosting figcaption h3{
     font-size: 1em;
     margin-top: 3%;
     margin-left: 3%;
 }
 
-.grid_hebergement figcaption p{
+.grid_hosting figcaption p{
     margin-bottom: 12px;
 }
-.grid_hebergement figcaption p, .étoile{
+.grid_hosting figcaption p, .star_hosting{
     margin-top: -3.5%;
     margin-left: 3%;
 }
 
-.grid_hébergement figcaption span{
+.grid_hosting figcaption span{
     font-weight: bold;
 }
 
-#Cannebière{
+#Cannebiere{
     grid-area: hosting1;
 }
 
@@ -458,7 +460,7 @@ section{
 
 @media (max-width:1000px) {
 
-    .grid_hebergement{
+    .grid_hosting{
 
         height:800px;
         grid-template-rows: 5% 26% 26% 26% 5%;
@@ -474,7 +476,7 @@ section{
 }
 
 @media (max-width:600px) {
-    .grid_hebergement{
+    .grid_hosting{
 
         height:1450px;
         grid-template-rows: 2.5% repeat(6,13.5%)2.5%;
@@ -592,7 +594,7 @@ section{
 
 }
 
-.étoile_populaire{
+.star_hosting_pop{
     grid-area: star_pop;
     display:flex;
     align-items: flex-end;
@@ -600,7 +602,7 @@ section{
 
 }
 
-.étoile_populaire i{
+.star_hosting_pop i{
     margin-right:3px;
 }
 
@@ -645,7 +647,7 @@ section{
 /* Partie: Activités */
 
 #bloc_activity{
-    grid-area: Activité;
+    grid-area: Activity;
 }
 .grid_activity{
     display:grid;
@@ -689,7 +691,7 @@ section{
 }
 
 
-#Fort_Pomègues{
+#Fort_Pomegues{
     grid-column: 2/3;
     grid-row:1/7;
 }
@@ -731,7 +733,7 @@ section{
         grid-area: activity1;
     }
 
-    #Fort_Pomègues{
+    #Fort_Pomegues{
         grid-area: activity2;
     }
 
