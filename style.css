@@ -42,11 +42,11 @@ figure:hover{
 nav{
     display:grid;
     grid-template-columns: auto 1fr auto auto auto;
-    grid-template-areas: "logo espacement hosting activités button_inscrire";
+    grid-template-areas: "logo espacement hosting activity button_suscribe";
     height:80px;
 }
 
-.bloc_logo{
+#bloc_logo{
     display: flex;
     align-items: flex-end;
     grid-area: logo;
@@ -66,7 +66,7 @@ nav img{
 }
 
 .--activités{
-    grid-area: activités;
+    grid-area: activity;
 }
 .--hébergement{
     grid-area:hosting;
@@ -76,7 +76,7 @@ nav img{
 }
 
 .--button{
-    grid-area: button_inscrire;
+    grid-area: button_suscribe;
     color: #0065FC;
     font-weight: bold;
 }
@@ -85,13 +85,13 @@ nav img{
     nav{
         grid-template-columns: 50% 50%;
         grid-auto-rows: 80px auto;
-        grid-template-areas: "logo  button_inscrire"
-                             "hosting activités";
+        grid-template-areas: "logo  button_suscribe"
+                             "hosting activity";
         height:160px;
         row-gap:20px;
     }
 
-    .bloc_logo{
+    #bloc_logo{
         margin-left: 10%
     }
     .link_nav{
@@ -119,8 +119,11 @@ nav img{
 }
 /* Partie: Searchbar */
 
-.title_searchbar{
+#bloc_searchbar{
     margin-top: 30px;
+}
+
+.title_searchbar{
     font-size: 1.2em;
 }
 
@@ -180,7 +183,7 @@ nav img{
 }
 
 @media (max-width:650px) {
-    .en-tete_searchbar{
+    .header_searchbar{
        margin-left: 3%;
        margin-right: 3%;
     }
@@ -209,9 +212,9 @@ nav img{
 }
 /* Partie: Filtre */
 
-.bloc_filtre{
+#bloc_filtre{
     display:flex;
-    margin-top: 10px;
+    margin-top: 30px;
 }
 
 .title_filtre{
@@ -269,7 +272,7 @@ nav img{
 }
 
 @media (max-width:650px){
-    .bloc_filtre{
+    #bloc_filtre{
         display:block;
         margin-left:3%;
     }
@@ -278,7 +281,7 @@ nav img{
 
 /* Partie: Info */
 
-.bloc_info{
+#bloc_info{
     display:flex;
     align-items: center;
     font-size: 0.9em;
@@ -286,12 +289,13 @@ nav img{
 
 }
 
-.bloc_info i{
+#bloc_info i{
     color: blue;
     border: solid 2px #DEEBFF;
     border-radius: 1rem;
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
+    min-width:30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -299,7 +303,7 @@ nav img{
 }
 
 @media (max-width:650px) {
-    .bloc_info{
+    #bloc_info{
         margin-left: 3%;
     }
 }
@@ -348,8 +352,8 @@ section{
     grid-template-columns:  1fr 1fr 1fr;
     grid-template-rows: 5% 39% 39% 5%;
     grid-template-areas: "title title title"
-                        "hebergement1 hebergement2 hebergement3"
-                        "hebergement4 hebergement5  hebergement6"
+                        "hosting1 hosting2 hosting3"
+                        "hosting4 hosting5  hosting6"
                         "button button button";
     height:600px;
     column-gap: 3%;
@@ -409,27 +413,27 @@ section{
 }
 
 #Cannebière{
-    grid-area: hebergement1;
+    grid-area: hosting1;
 }
 
 #Port{
-    grid-area: hebergement2;
+    grid-area: hosting2;
 }
 
 #Mouettes{
-    grid-area: hebergement3;
+    grid-area: hosting3;
 }
 
 #Mer{
-    grid-area: hebergement4;
+    grid-area: hosting4;
 }
 
 #Panier{
-    grid-area: hebergement5;
+    grid-area: hosting5;
 }
 
 #Amina{
-    grid-area: hebergement6;
+    grid-area: hosting6;
 }
 .star_blue{
     color:#0065FC;
@@ -442,7 +446,7 @@ section{
 }
 
 
-.afficher_plus{
+.btn_show_more{
     grid-area: button;
     background: none;
     border:none;
@@ -460,9 +464,9 @@ section{
         grid-template-rows: 5% 26% 26% 26% 5%;
         grid-template-columns: 1fr 1fr;
         grid-template-areas: "title title"
-                            "hebergement1 hebergement2"
-                             "hebergement3 hebergement4"
-                             "hebergement5 hebergement6"
+                            "hosting1 hosting2"
+                             "hosting3 hosting4"
+                             "hosting5 hosting6"
                              "button button";
        row-gap:3%;
     }
@@ -477,12 +481,12 @@ section{
         grid-template-columns: 100%;
         grid-template-areas: 
                              "title"
-                             "hebergement1" 
-                             "hebergement2"
-                             "hebergement3" 
-                             "hebergement4"
-                             "hebergement5" 
-                             "hebergement6"
+                             "hosting1" 
+                             "hosting2"
+                             "hosting3" 
+                             "hosting4"
+                             "hosting5" 
+                             "hosting6"
                              "button";
        row-gap:2%;
     }
@@ -491,7 +495,7 @@ section{
 /* Partie: hébergement populaire */
 
 
-.bloc_hebergement_populaire{
+.bloc_hosting_popular{
     grid-area: hebergement_populaire;
     background: #F2F2F2;
     border-radius: 1rem;
@@ -502,7 +506,7 @@ section{
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 10% 26% 26% 26%;
-    grid-template-areas: "en-tete"
+    grid-template-areas: "header"
                          "hosting_pop1"
                          "hosting_pop2"
                          "hosting_pop3";
@@ -528,8 +532,8 @@ section{
     justify-content: center;
 }
 
-.en-tete{
-    grid-area: en-tete;
+.header_hosting_pop{
+    grid-area: header;
     display:flex;
     justify-content: space-between;
     margin-left: 5%;
@@ -537,11 +541,11 @@ section{
     margin-right: 5%;
     align-items: center;
 }
-.en-tete h2{
+.header_hosting_pop h2{
     font-size: 1.2em;
 }
 
-.en-tete i{
+.header_hosting_pop i{
     font-size: 1.3em;
 }
 
@@ -601,7 +605,7 @@ section{
 }
 
 @media (max-width:1210px) {
-    .bloc_hebergement_populaire{
+    .bloc_hosting_popular{
         padding-bottom: 25px;
         padding-top: 15px;
         height:210px;
@@ -610,7 +614,7 @@ section{
     .grid_hosting_popular{
         grid-template-rows: 10% 75%;
         grid-template-columns: 1fr 1fr 1fr;
-        grid-template-areas: "en-tete en-tete en-tete"
+        grid-template-areas: "header header header"
                             "hosting_pop1 hosting_pop2 hosting_pop3";
         row-gap: 15%;
     }
@@ -619,7 +623,7 @@ section{
 }
 
 @media (max-width:1082px){
-    .bloc_hebergement_populaire{
+    .bloc_hosting_popular{
         padding-bottom: 25px;
         height:600px;
     }
@@ -627,7 +631,7 @@ section{
     .grid_hosting_popular{
         grid-template-rows: 10% 25% 25% 25%;
         grid-template-columns: 100%;
-        grid-template-areas: "en-tete"
+        grid-template-areas: "header"
                             "hosting_pop1" 
                             "hosting_pop2" 
                             "hosting_pop3";
@@ -640,10 +644,10 @@ section{
 
 /* Partie: Activités */
 
-#bloc_activités{
+#bloc_activity{
     grid-area: Activité;
 }
-.activites{
+.grid_activity{
     display:grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(11, 1fr);
@@ -652,11 +656,11 @@ section{
     height:470px;
 }
 
-.activites a{
+.grid_activity a{
     height: 100%;
 }
 
-.activites figure{
+.grid_activity figure{
     margin:0;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     border-radius:1rem;
@@ -665,14 +669,14 @@ section{
 }
 
 
-.activites  h3{
+.grid_activity  h3{
     font-size: 1em;
     margin-left: 5%;
     background: white;
     
 }
 
-.activites img{
+.grid_activity img{
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
     width:100%;
@@ -714,47 +718,47 @@ section{
 }
 
 @media (max-width:1062px){
-    .activites{
+    .grid_activity{
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 50% 50%;
-    grid-template-areas: "Port Fort Iles"
-                        "Calanque Notre_Dame Longchamp";
+    grid-template-areas: "activity1 activity2 activity3"
+                        "activity4 activity5 activity6";
     row-gap: 3%;
     column-gap: 2%;
     }
 
     #Vieux_Port{
-        grid-area: Port;
+        grid-area: activity1;
     }
 
     #Fort_Pomègues{
-        grid-area: Fort;
+        grid-area: activity2;
     }
 
     #Iles_Frioul{
-        grid-area: Iles;
+        grid-area: activity3;
     }
 
     #Parc_Calanques{
-        grid-area: Calanque;
+        grid-area: activity4;
     }
 
     #Notre-Dame-de-la-Garde{
-        grid-area:Notre_Dame;
+        grid-area:activity5;
     }
 
     #Parc_Longchamp{
-        grid-area: Longchamp;
+        grid-area: activity6;
     }
 }
 
 @media (max-width:800px) {
-    .activites{
+    .grid_activity{
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: 32% 32% 32%;
-        grid-template-areas: "Port Fort" 
-                             "Iles Calanque"
-                             "Notre_Dame Longchamp";
+        grid-template-areas: "activity1 activity2" 
+                             "activity3 activity4"
+                             "activity5 activity6";
         row-gap: 2%;
         height: 600px;
         }
@@ -762,15 +766,15 @@ section{
 }
 
 @media (max-width:550px) {
-    .activites{
+    .grid_activity{
         grid-template-columns: 100%;
         grid-template-rows: repeat(6, 15%);
-        grid-template-areas: "Port"
-                             "Fort" 
-                             "Iles" 
-                             "Calanque"
-                             "Notre_Dame" 
-                             "Longchamp";
+        grid-template-areas: "activity1"
+                             "activity2" 
+                             "activity3" 
+                             "activity4"
+                             "activity5" 
+                             "activity6";
         row-gap: 2%;
         height: 1400px;
         }
