@@ -1,0 +1,1080 @@
+CSS
+/* -- GENERAL -- */
+
+@font-face {
+    font-family: Raleway;
+    src: url(Police/Raleway-Medium.ttf);
+}
+
+
+body{
+    font-family: Raleway;
+    margin:0;
+    width: 100%;
+    
+}
+header, section{
+    max-width: 1750px;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    object-fit: cover;
+}
+/*-- HEADER (NAV + SEARCHBAR + FILTRES +INFOS)  --*/
+
+
+
+/* Partie: NAV */
+
+nav{
+    display:grid;
+    grid-template-columns: auto 1fr auto auto auto;
+    grid-template-areas: "logo espacement hosting activités button_inscrire";
+    height:80px;
+}
+
+.bloc_logo{
+    display: flex;
+    align-items: flex-end;
+    grid-area: logo;
+}
+nav img{
+    height:50px;
+    
+}
+
+.link_nav{
+    padding-right: 30px;
+    padding-left: 30px;
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.--activités{
+    grid-area: activités;
+}
+.--hébergement{
+    grid-area:hosting;
+    color:#0065FC;
+    border-top: 3px #0065FC solid;
+    text-align: center;
+}
+
+.--button{
+    grid-area: button_inscrire;
+    color: #0065FC;
+    font-weight: bold;
+}
+
+@media (max-width:650px) {
+    nav{
+        grid-template-columns: 50% 50%;
+        grid-auto-rows: 80px auto;
+        grid-template-areas: "logo  button_inscrire"
+                             "hosting activités";
+        height:160px;
+        row-gap:20px;
+    }
+
+    .bloc_logo{
+        margin-left: 10%
+    }
+    .link_nav{
+        width:100%;
+        padding:0;
+        text-align: center;
+    }
+    .--button{
+        justify-content: flex-end;
+        width:90%;
+    }
+
+    .--hébergement{
+        border-top: none;
+        border-bottom: 3px #0065FC solid;
+    }
+
+    .--activités{
+        border-bottom: 3px solid #F2F2F2;
+    }
+    header{
+        margin:0
+    }
+    
+}
+/* Partie: Searchbar */
+
+.title_searchbar{
+    margin-top: 30px;
+    font-size: 1.2em;
+}
+
+.subtitle_searchbar{
+    margin-top: -5px;
+    margin-bottom: 20px;
+}
+
+.searchbar{
+    height: 40px;
+    display:flex;
+}
+
+.searchbar label{
+    width:55px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background: #F2F2F2;
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+}
+
+.searchbar input{
+    width: 260px;
+    padding-left: 20px;
+    border-left:none;
+    border-right: none;
+    border-bottom: #F2F2F2 2px solid;
+    border-top: #F2F2F2 2px solid;
+    font-family: Raleway_bold;
+}
+
+.searchbar input::placeholder{
+    color: black;
+    font-size: 1.1em;
+    font-family: Raleway;
+}
+
+.searchbar button{
+    color:white;
+    background: #0065FC;
+    width: 120px;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    border: none;
+    font-size: 1em;
+    
+}
+
+.searchbar button i{
+    display:none
+}
+
+.search_text_btn{
+    font-weight: bold;
+}
+
+@media (max-width:650px) {
+    .en-tete_searchbar{
+       margin-left: 3%;
+       margin-right: 3%;
+    }
+
+    .searchbar{
+        display:flex;
+        justify-content:center;
+        width:100%;
+    }
+
+    .searchbar input{
+        width:60%;
+    }
+    .searchbar button{
+        width:55px;
+        border-radius: 1rem;
+        margin-left: -20px;
+    }
+    .search_text_btn{
+        display:none;
+    }
+
+    .searchbar button i{
+        display:block;
+    }
+}
+/* Partie: Filtre */
+
+.bloc_filtre{
+    display:flex;
+    margin-top: 10px;
+}
+
+.title_filtre{
+    margin-right: 30px;
+    font-weight: bold;
+}
+.filtres{
+    display:flex;
+    flex-wrap:wrap;
+}
+
+.filtre{
+    display:flex;
+    margin: 0;
+    padding-bottom: 15px;
+}
+.filtre i{
+    background: #DEEBFF;
+    display: flex;
+    width:40px;
+    height: 50px;
+    border-radius: 100%;
+    justify-content: center;
+    align-items: center;
+    color:blue;
+    z-index: 1;
+}
+
+
+.filtre p{
+    height: 45px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 30px;
+    padding-right:20px;
+    position: relative;
+    margin:0;
+    right:22px;
+    border: solid #F2F2F2 3px;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    border-left: none;
+    z-index: 0;
+}
+
+@media (max-width:650px){
+    .bloc_filtre{
+        display:block;
+        margin-left:3%;
+    }
+}
+
+
+/* Partie: Info */
+
+.bloc_info{
+    display:flex;
+    align-items: center;
+    font-size: 0.9em;
+    margin-top: 15px;
+
+}
+
+.bloc_info i{
+    color: blue;
+    border: solid 2px #DEEBFF;
+    border-radius: 1rem;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+}
+
+@media (max-width:650px) {
+    .bloc_info{
+        margin-left: 3%;
+    }
+}
+/* -- MAIN -- */
+
+section{
+    display:grid;
+    grid-template-columns: 68% 28%;
+    grid-template-rows: auto auto;
+    grid-template-areas: "hebergement hebergement_populaire"
+                                "Activité Activité";
+    column-gap: 4%;
+    margin-top: 15px;
+}
+
+@media (max-width:1210px) {
+    section{
+        grid-template-columns: 97%;
+        grid-template-rows: repeat(3, auto);
+        grid-template-areas: "hebergement_populaire"
+                            "hebergement"
+                            "Activité";
+        column-gap: 0%;
+        row-gap: 30px;
+        justify-content: center;
+    }
+
+        .bloc_hébergeent{
+            width:100%;
+        }
+}
+
+
+.bloc_hébergement{
+    grid-area: hebergement;
+    background: #F2F2F2;
+    height: auto;
+    border-radius: 1rem;
+
+}
+
+    .grid_hebergement{
+    
+    border-radius: 1rem;
+    display:grid ;
+    grid-template-columns:  1fr 1fr 1fr;
+    grid-template-rows: 5% 39% 39% 5%;
+    grid-template-areas: "title title title"
+                        "hebergement1 hebergement2 hebergement3"
+                        "hebergement4 hebergement5  hebergement6"
+                        "button button button";
+    height:600px;
+    column-gap: 3%;
+    row-gap: 4%;
+    margin-left: 3%;
+    margin-right:3%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    
+    }
+
+
+
+
+.grid_hebergement h2{
+    grid-area:title;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+   
+}
+
+    
+
+.grid_hebergement figure{
+    border: solid 5px white;
+    border-radius: 1rem;
+    background: white;
+    margin:0;
+    height:auto;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.grid_hebergement figure img{
+    height: 60%;
+    width: 100%;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+.grid_hebergement figcaption h3{
+    font-size: 1em;
+    margin-top: 3%;
+    margin-left: 3%;
+}
+
+.grid_hebergement figcaption p{
+    margin-bottom: 12px;
+}
+.grid_hebergement figcaption p, .étoile{
+    margin-top: -3.5%;
+    margin-left: 3%;
+}
+
+.grid_hébergement figcaption span{
+    font-weight: bold;
+}
+
+#Cannebière{
+    grid-area: hebergement1;
+}
+
+#Port{
+    grid-area: hebergement2;
+}
+
+#Mouettes{
+    grid-area: hebergement3;
+}
+
+#Mer{
+    grid-area: hebergement4;
+}
+
+#Panier{
+    grid-area: hebergement5;
+}
+
+#Amina{
+    grid-area: hebergement6;
+}
+.star_blue{
+    color:#0065FC;
+    font-size: 0.8em;
+}
+
+.star_grey{
+    color: #F2F2F2;
+    font-size: 0.8em;
+}
+
+
+.afficher_plus{
+    grid-area: button;
+    background: none;
+    border:none;
+    font-size: 1.1em;
+    font-weight: bold;
+    display:flex;
+    align-items: center;
+}
+
+@media (max-width:1000px) {
+
+    .grid_hebergement{
+
+        height:800px;
+        grid-template-rows: 5% 26% 26% 26% 5%;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "title title"
+                            "hebergement1 hebergement2"
+                             "hebergement3 hebergement4"
+                             "hebergement5 hebergement6"
+                             "button button";
+       row-gap:3%;
+    }
+    
+}
+
+@media (max-width:600px) {
+    .grid_hebergement{
+
+        height:1450px;
+        grid-template-rows: 2.5% repeat(6,13.5%)2.5%;
+        grid-template-columns: 100%;
+        grid-template-areas: 
+                             "title"
+                             "hebergement1" 
+                             "hebergement2"
+                             "hebergement3" 
+                             "hebergement4"
+                             "hebergement5" 
+                             "hebergement6"
+                             "button";
+       row-gap:2%;
+    }
+    
+}
+/* Partie: hébergement populaire */
+
+
+.bloc_hebergement_populaire{
+    grid-area: hebergement_populaire;
+    background:grey;
+    border-radius: 1rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.en-tete{
+    display:flex;
+    justify-content: space-between;
+    margin-left: 30px;
+    margin-top: 20px;
+    margin-right: 30px;
+    align-items: center;
+    
+}
+.en-tete h2{
+    font-size: 1.2em;
+    
+}
+
+.en-tete i{
+    font-size: 1.3em;
+}
+
+
+.proposition_heber_populaire{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+@media (max-width:1210px) {
+    .proposition_heber_populaire{
+        flex-direction: row;
+    }
+    
+    .proposition_heber_populaire figure{
+        margin:0;
+        margin-left:3%;
+        margin-bottom: 4%;
+    }
+    
+    .proposition_heber_populaire figure:last-of-type{
+        margin-right:3%;
+    }
+}
+
+@media (max-width:940px){
+    .proposition_heber_populaire{
+        flex-direction: column;
+    }
+
+    .proposition_heber_populaire figure{
+        margin:0;
+        margin-bottom: 3%;
+    }
+
+    .proposition_heber_populaire figure:last-of-type{
+        margin-right:0;
+        margin-bottom: 4%;
+    }
+}
+.proposition_heber_populaire figure{
+    border: solid 5px white;
+    border-radius: 1rem;
+    height: 130px;
+    width: 85%;
+    background: white;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    
+    
+}
+
+.proposition_heber_populaire img{
+    height: 130px;
+    width: 40%;
+    border-bottom-left-radius: 1rem;
+    border-top-left-radius: 1rem;
+    object-fit: cover;
+}
+
+.proposition_heber_populaire figcaption{
+    margin-left: 5%;
+    width: 60%;
+}
+
+.proposition_heber_populaire h3{
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+.proposition_heber_populaire figcaption p{
+    margin-top: -10px;
+
+}
+
+.étoile_populaire{
+    margin-top:45px;
+}
+
+
+
+/* Partie: Activités */
+
+.bloc_activités{
+    grid-area: Activité;
+}
+.activites{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(11, 1fr);
+    column-gap: 2%;
+    background: none;
+    height:470px;
+}
+
+
+
+.activites figure{
+    margin:0;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    border-radius:1rem;
+    overflow: hidden;
+}
+
+
+.activites  h3{
+    font-size: 1em;
+    margin-left: 5%;
+    background: white;
+    
+}
+
+.activites img{
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    width:100%;
+    height: calc(100% - 50px);
+}
+
+#Vieux_Port{
+        grid-column: 1/2;
+        grid-row: 1/12;
+}
+
+
+#Fort_Pomègues{
+    grid-column: 2/3;
+    grid-row:1/7;
+}
+
+#Iles_Frioul{
+    grid-column:2/3;
+    grid-row: 8/12;
+}
+
+#Parc_Calanques{
+    grid-column: 3/4;
+    grid-row: 1/12;
+}
+
+
+#Notre-Dame-de-la-Garde{
+    grid-column: 4/5;
+    grid-row: 1/6;
+}
+
+
+#Parc_Longchamp{
+    grid-row: 7/12;
+    grid-column: 4/5;
+
+}
+
+@media (max-width:1062px){
+    .activites{
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "Port Fort Iles"
+                        "Calanque Notre_Dame Longchamp";
+    row-gap: 3%;
+    }
+
+    #Vieux_Port{
+        grid-area: Port;
+    }
+
+    #Fort_Pomègues{
+        grid-area: Fort;
+    }
+
+    #Iles_Frioul{
+        grid-area: Iles;
+    }
+
+    #Parc_Calanques{
+        grid-area: Calanque;
+    }
+
+    #Notre-Dame-de-la-Garde{
+        grid-area:Notre_Dame;
+    }
+
+    #Parc_Longchamp{
+        grid-area: Longchamp;
+    }
+}
+
+@media (max-width:800px) {
+    .activites{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: "Port Fort" 
+                             "Iles Calanque"
+                             "Notre_Dame Longchamp";
+        row-gap: 2%;
+        height: 600px;
+        }
+    
+}
+
+@media (max-width:550px) {
+    .activites{
+        grid-template-columns: 100%;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: "Port"
+                             "Fort" 
+                             "Iles" 
+                             "Calanque"
+                             "Notre_Dame" 
+                             "Longchamp";
+        row-gap: 2%;
+        height: 1400px;
+        }
+    
+}
+/* -- FOOTER --*/
+footer{
+    background: #F2F2F2;
+}
+
+.element_footer{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "About Hébergement Assistance";
+    margin-top: 50px;
+    column-gap: 2%;
+    margin-left: 3%;
+    
+    
+}
+
+#bloc_about{
+    grid-area: About;
+}
+
+#bloc_about_hébergement{
+    grid-area: Hébergement;
+}
+
+#bloc_assistance{
+    grid-area: Assistance;
+}
+
+@media (max-width:800px) {
+    .element_footer{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: "About"
+                            "Hébergement"
+                            "Assistance";
+    }
+    
+}
+
+
+
+HTML
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Reservia</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/335ea7bf70.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="bloc_logo">
+            <img src="images/logo/Reservia@3x.png" alt="logo Reservia"/>
+        </div>
+
+        <a class="link_nav --hébergement" href="">Hébergement</a>
+        <a class="link_nav --activités" href="">Activités</a>
+
+        <a class="link_nav --button" href="">S'inscrire</a>
+    </nav>
+
+    <div class="bloc_searchbar">
+        <div class="en-tete_searchbar">
+            <h2 class="title_searchbar">Trouvez votre hébergemement pour des vacances de rêves</h2>
+            <p class="subtitle_searchbar">En plein centre-ville ou en pleine nature</p>
+        </div>
+
+        <div class="searchbar">
+        <label for="input_searchbar"><i class="fas fa-map-marker-alt"></i></label>
+        <input type="text" placeholder="Marseille, France" id="input_searchbar">
+
+        <button> 
+            <span class="search_text_btn">Rechercher</span>
+            <i class="fas fa-search"></i> 
+        </button>
+        </div>
+
+    </div>
+    
+    <div class="bloc_filtre">
+        <div class="bloc_filtre">
+            <p class="title_filtre">Filtres</p>
+            
+            <div class="filtres">
+                <div class="filtre --economique">
+                <i class="fas fa-money-bill-wave"></i>
+                <p>Economique</p>
+                </div>
+
+                <div class="filtre --familial">
+                <i class="fas fa-child"></i>
+                <p>Familial</p>
+                </div>
+
+                <div class="filtre --romantique">
+                <i class="fas fa-heart"></i>
+                <p>Romantique</p>
+                </div>
+
+                <div class="filtre --animaux_autorisés">
+                <i class="fas fa-dog"></i>
+                <p>Animaux autorisés</p>
+
+                </div>
+
+            
+            </div>
+        </div>
+    </div>
+
+    <div class="bloc_info">
+        <i class="fas fa-info"></i>
+        <p>Plus de 500 logements sont disponible dans cette ville</p>
+    </div>
+
+</header>
+
+
+<section>
+    <div class="bloc_hébergement">
+        <div class="grid_hebergement">
+            <h2>Hébergements à Marseille</h2>
+
+            <figure id="Cannebière">
+                <img src="images/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="photo hébergement">
+                <figcaption>
+                    <h3>Auberge de la Cannebière</h3>
+                    <p>Nuit à partir de <span>25€</span></p>
+                    <div class="étoile">
+                        <i class="fas fa-star star_blue"></i>
+                        <i class="fas fa-star star_blue"></i>
+                        <i class="fas fa-star star_blue"></i>
+                        <i class="fas fa-star star_blue"></i>
+                        <i class="fas fa-star star_grey"></i>
+                    </div>
+                </figcaption>
+            </figure>
+
+            <figure id="Port">
+                <img src="images/hebergements/4_small/fred-kleber-gTbaxaVLvsg-unsplash.jpg" alt="photo hébergement">
+                <figcaption>
+                    <h3>Hôtel du port</h3>
+                    <p>Nuit à partir de 52€</p>
+                    <div class="étoile">
+                        <i class="fas fa-star star_blue"></i>
+                        <i class="fas fa-star star_blue"></i>
+                        <i class="fas fa-star star_blue"></i>
+                        <i class="fas fa-star star_blue"></i>
+                        <i class="fas fa-star star_blue"></i>
+                    </div>
+                    </figcaption>
+                    </figure>
+
+            <figure id="Mouettes">
+                <img src="images/hebergements/4_small/reisetopia-B8WIgxA_PFU-unsplash.jpg" alt="photo hébergement">
+                <figcaption>
+                    <h3>Hôtel Les mouettes</h3>
+                    <p>Nuit à partir de 76€</p>
+                    <div class="étoile">
+                        <i class="fas fa-star star_blue"></i>
+                        <i class="fas fa-star star_blue"></i>
+                        <i class="fas fa-star star_blue"></i>
+                        <i class="fas fa-star star_blue"></i>
+                        <i class="fas fa-star star_grey"></i>
+                    </div>
+                </figcaption>
+            </figure>
+
+            <figure id="Mer">
+                <img src="images/hebergements/4_small/annie-spratt-Eg1qcIitAuA-unsplash.jpg" alt="photo hébergement">
+                <figcaption>
+                    <h3>Hôtel de la mer</h3>
+                    <p>Nuit à partir de 46€</p>
+                    <div class="étoile">
+                        <i class="fas fa-star star_blue"></i>
+                        <i class="fas fa-star star_blue"></i>
+                        <i class="fas fa-star star_blue"></i>
+                        <i class="fas fa-star star_grey"></i>
+                        <i class="fas fa-star star_grey"></i>
+                    </div>
+                </figcaption>
+            </figure>
+                    
+            <figure id="Panier">
+                <img src="images/hebergements/4_small/nicate-lee-kT-ZyaiwBe0-unsplash.jpg" alt="photo hébergement">
+                <figcaption>
+                    <h3>Auberge Le Panier</h3>
+                    <p>Nuit à partir de <span>23€</span></p>
+                    <div class="étoile">
+                        <i class="fas fa-star star_blue"></i>
+                        <i class="fas fa-star star_blue"></i>
+                        <i class="fas fa-star star_blue"></i>
+                        <i class="fas fa-star star_blue"></i>
+                        <i class="fas fa-star star_grey"></i>
+                    </div>
+                </figcaption>
+            </figure>
+
+            <figure id="Amina">
+                <img src="images/hebergements/4_small/febrian-zakaria-M6S1WvfW68A-unsplash.jpg" alt="photo hébergement">
+                <figcaption>
+                    <h3>Hôtel chez Amina</h3>
+                    <p>Nuit à partir de 96€</p>
+                    <div class="étoile">
+                        <i class="fas fa-star star_blue"></i>
+                        <i class="fas fa-star star_blue"></i>
+                        <i class="fas fa-star star_blue"></i>
+                        <i class="fas fa-star star_blue"></i>
+                        <i class="fas fa-star star_blue"></i>
+                    </div>
+                </figcaption>
+            </figure>
+
+            <button class="afficher_plus">Afficher plus</button>
+        </div>
+    </div>
+
+    <div class="bloc_hebergement_populaire">
+        <div class="en-tete">
+            <h2>Les plus populaire </h2>
+            <i class="fas fa-chart-line"></i>
+        </div>
+
+        <div class="proposition_heber_populaire">
+            <figure>
+                <img src="images/hebergements/4_small/emile-guillemot-Bj_rcSC5XfE-unsplash.jpg" alt="photo hébergement">
+                <figcaption>
+                    <h3>Hôtel Les mouettes</h3>
+                    <p>Nuit à partir de 76€</p>
+                    <div class="étoile_populaire">
+                        <i class="fas fa-star star_blue"></i>
+                        <i class="fas fa-star star_blue"></i>
+                        <i class="fas fa-star star_blue"></i>
+                        <i class="fas fa-star star_blue"></i>
+                        <i class="fas fa-star star_grey"></i>
+                    </div>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/hebergements/4_small/aw-creative-VGs8z60yT2c-unsplash.jpg" alt="photo hébergement">
+                <figcaption>
+                    <h3>Hôtel Les mouettes</h3>
+                    <p>Nuit à partir de 76€</p>
+                    <div class="étoile_populaire">
+                        <i class="fas fa-star star_blue"></i>
+                        <i class="fas fa-star star_blue"></i>
+                        <i class="fas fa-star star_blue"></i>
+                        <i class="fas fa-star star_blue"></i>
+                        <i class="fas fa-star star_grey"></i>
+                    </div>
+                </figcaption>
+            </figure>
+
+            
+            <figure>
+                <img src="images/hebergements/4_small/febrian-zakaria-M6S1WvfW68A-unsplash.jpg" alt="photo hébergement">
+                <figcaption>
+                    <h3>Hôtel Les mouettes</h3>
+                    <p>Nuit à partir de 76€</p>
+                    <div class="étoile_populaire">
+                        <i class="fas fa-star star_blue"></i>
+                        <i class="fas fa-star star_blue"></i>
+                        <i class="fas fa-star star_blue"></i>
+                        <i class="fas fa-star star_blue"></i>
+                        <i class="fas fa-star star_grey"></i>
+                    </div>
+                </figcaption>
+            </figure>
+            
+
+        </div>
+    </div>
+
+    <div class="bloc_activités">
+        <h2 class="en-tête_activités"> Activités à Marseille </h2>
+
+        <div class="activites">
+            <figure id="Vieux_Port">
+                <img src="images/activites/3_medium/reno-laithienne-QUgJhdY5Fyk-unsplash.jpg"
+                alt="Photo du Vieux Port de Marseille"/>
+                <figcaption>
+                    <h3>Vieux Port</h3>
+                </figcaption>
+            </figure>
+
+            <figure id="Fort_Pomègues">
+                <img src="images/activites/4_small/paul-hermann-QFTrLdQIRhI-unsplash.jpg"
+                alt="Photo du Fort de Pomègues"/>
+                <figcaption>
+                    <h3>Fort de Pomègues</h3>
+                </figcaption>
+            </figure>
+
+            <figure id="Iles_Frioul">
+                <img src="images/activites/4_small/kevin-hikari-rV_Qd1l-VXg-unsplash.jpg"
+                alt="Photo du Parc National des Calanques"/>
+                <figcaption>
+                    <h3>Iles du Frioul</h3>
+                </figcaption>
+            </figure>
+
+            <figure id="Parc_Calanques">
+                <img src="images/activites/3_medium/kilyan-sockalingum-NR8-cBCN3aI-unsplash.jpg"
+                alt="Photo du Parc National des Calanques"/>
+                <figcaption>
+                    <h3>Parc National des Calanques</h3>
+                </figcaption>
+            </figure>
+
+            <figure id="Notre-Dame-de-la-Garde">
+                <img src="images/activites/4_small/florian-wehde-xW9e8gdotxI-unsplash.jpg"
+                alt="Photo de Notre-Dame-de-la-Garde"/>
+                <figcaption>
+                    <h3>Notre-Dame-de-la-Garde</h3>
+                </figcaption>
+            </figure>
+
+            <figure id="Parc_Longchamp">
+                <img src="images/activites/4_small/lena-paulin-wH2-EJoDcV0-unsplash.jpg"
+                alt="Photo du Parc Longchamp"/>
+                <figcaption>
+                    <h3>Parc Longchamp</h3>
+                </figcaption>
+            </figure>
+
+        </div>
+    </div>
+
+</section>
+
+<footer>
+    <div class="element_footer">
+    <div id="bloc_about">
+        <h2>A propos</h2>
+        <p>Fonctionnement du site</p>
+        <p>Conditions générales de vente</p>
+        <p>Données et confidentialités</p>
+    </div>
+
+    <div id="bloc_about_hébergements">
+        <h2>Nos hébergements</h2>
+        <p>Charte qualité</p>
+        <p>Soumettre vos hôtel</p>
+    </div>
+
+    <div id="bloc_assistance">
+        <h2>Assistance</h2>
+        <p>Centre d'aide</p>
+        <p>Nous contacter</p>
+    </div>
+    </div>
+</footer>
+
+
+
+
+</body>
+</html>
